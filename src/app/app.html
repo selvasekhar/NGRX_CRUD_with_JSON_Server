@@ -1,0 +1,66 @@
+<!-- 
+
+<form action="action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input  appFocus type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input   type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form> -->
+
+<!-- <div appdisable>
+  <ul>
+    <li></li>
+  </ul>
+</div> -->
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <td>userId</td>
+        <td>id</td>
+        <td>Delete</td>
+        <td>update</td>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- <tr>@for(data of crudData$ | async; track data){
+      <td>{{ data.id }}</td>
+      <td>{{ data.title }}</td>
+      <td>Delete</td>
+      <td></td>
+      }
+    </tr> -->
+   
+       <tr *ngFor="let item of crudData$ | async">
+      <td>{{ item.userId }}</td>
+      <td>{{ item.id }}</td>
+      <td><button class="btn btn-primary" >Delete</button></td>
+      <td><button class="btn btn-primary" >Updata</button></td>
+    </tr> 
+   </tbody>
+  </table>
+  <div>
+    <button class="btn btn-primary" (click)="createdata()">Create</button>
+    @if(isCreate){
+    <input type="text" [(ngModel)]="newData" placeholder="enter text">
+    <button class="btn btn-warning" (click)="addData(newData)">Add</button>
+    }
+  </div>
+</div>
